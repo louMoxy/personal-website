@@ -175,15 +175,18 @@ export function CustomCursor() {
     let raf = 0;
 
     const onMove = (e: MouseEvent) => {
-      const cx = e.clientX + CIRCLE_CENTER_OFFSET_X;
-      const cy = e.clientY + CIRCLE_CENTER_OFFSET_Y;
+      const px = e.clientX;
+      const py = e.clientY;
+      const cx = px + CIRCLE_CENTER_OFFSET_X;
+      const cy = py + CIRCLE_CENTER_OFFSET_Y;
       targetX.set(cx);
       targetY.set(cy);
       setVisible(true);
 
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
-        const el = document.elementFromPoint(cx, cy);
+        /** Use the real pointer for hit-testing. Offset lead position would miss narrow targets (e.g. nav links). */
+        const el = document.elementFromPoint(px, py);
         const region = el?.closest("[data-cursor]");
         setVariant(parseCursorKey(region?.getAttribute("data-cursor")));
       });

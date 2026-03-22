@@ -3,7 +3,22 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 
+import type { CursorKey } from "@/components/motion/custom-cursor";
 import { nav, site } from "@/lib/content";
+
+/** Matches custom-cursor section keys so nav hovers preview that section’s palette. */
+const NAV_HREF_CURSOR: Record<string, CursorKey> = {
+  "#top": "hero",
+  "#about": "about",
+  "#work": "work",
+  "#skills": "skills",
+  "#portfolio": "portfolio",
+  "#contact": "contact",
+};
+
+function navCursor(href: string): CursorKey {
+  return NAV_HREF_CURSOR[href] ?? "header";
+}
 
 const navList = {
   hidden: {},
@@ -32,6 +47,7 @@ export function SiteHeader() {
       <div className="section-padding-x mx-auto flex max-w-6xl flex-col gap-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
         <Link
           href="#top"
+          data-cursor={navCursor("#top")}
           className="min-h-11 shrink-0 self-center font-[family-name:var(--font-display)] text-base font-black uppercase tracking-tight sm:self-auto sm:text-lg"
         >
           {site.name}
@@ -43,6 +59,7 @@ export function SiteHeader() {
                 <li key={item.href}>
                   <a
                     href={item.href}
+                    data-cursor={navCursor(item.href)}
                     className="block min-h-11 min-w-[2.75rem] border-2 border-transparent px-2.5 py-2.5 text-center text-[11px] font-bold uppercase leading-tight tracking-wide hover:border-black sm:min-h-0 sm:min-w-0 sm:px-3 sm:py-2 sm:text-xs md:text-sm"
                   >
                     {item.label}
@@ -61,6 +78,7 @@ export function SiteHeader() {
                 <motion.li key={item.href} variants={navItem}>
                   <a
                     href={item.href}
+                    data-cursor={navCursor(item.href)}
                     className="block min-h-11 min-w-[2.75rem] border-2 border-transparent px-2.5 py-2.5 text-center text-[11px] font-bold uppercase leading-tight tracking-wide hover:border-black sm:min-h-0 sm:min-w-0 sm:px-3 sm:py-2 sm:text-xs md:text-sm"
                   >
                     {item.label}

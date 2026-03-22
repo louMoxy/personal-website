@@ -26,11 +26,11 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Louise Moxhay — Principal Frontend Engineer",
+  title: "Louise Moxhay — Frontend Engineer",
   description:
     "Principal frontend engineer in London. React, TypeScript, data visualization, and interfaces that make hard things feel simple. Open to contracts and full-time roles.",
   openGraph: {
-    title: "Louise Moxhay — Principal Frontend Engineer",
+    title: "Louise Moxhay — Frontend Engineer",
     description:
       "React, TypeScript, data viz, design systems — London. Open to contracts.",
     type: "website",

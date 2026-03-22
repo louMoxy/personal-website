@@ -4,7 +4,7 @@ export const site = {
   title: "Louise Moxhay — Principal Frontend Engineer",
   description:
     "Principal frontend engineer in London. React, TypeScript, data visualization, design systems, and interfaces that make hard things feel simple.",
-  cvPath: "/cv.pdf",
+  cvPath: "/Louise_Moxhay_CV.pdf",
 } as const;
 
 export const hero = {

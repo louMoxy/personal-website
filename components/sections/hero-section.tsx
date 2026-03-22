@@ -6,6 +6,7 @@ export function HeroSection() {
   return (
     <section
       id="top"
+      data-cursor="hero"
       className="relative overflow-hidden border-b-[3px] border-black hero-bg-wave-svg"
       aria-labelledby="hero-heading"
     >

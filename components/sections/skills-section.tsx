@@ -22,6 +22,7 @@ export function SkillsSection() {
   return (
     <section
       id="skills"
+      data-cursor="skills"
       className="border-b-[3px] border-black bg-[var(--palette-mint)] pattern-dots pattern-drift"
       aria-labelledby="skills-heading"
     >
@@ -51,9 +52,11 @@ export function SkillsSection() {
                 whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-8%" }}
                 transition={{
-                  duration: 0.45,
+                  type: "spring",
+                  stiffness: 380,
+                  damping: 26,
+                  mass: 0.82,
                   delay: i * 0.07,
-                  ease: [0.22, 1, 0.36, 1],
                 }}
                 whileHover={
                   reduce
@@ -61,7 +64,12 @@ export function SkillsSection() {
                     : {
                         y: -6,
                         boxShadow: "12px 12px 0 0 #000",
-                        transition: { duration: 0.2 },
+                        transition: {
+                          type: "spring",
+                          stiffness: 420,
+                          damping: 22,
+                          mass: 0.5,
+                        },
                       }
                 }
               >

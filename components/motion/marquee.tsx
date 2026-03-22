@@ -10,6 +10,7 @@ export function Marquee({ text, className = "" }: MarqueeProps) {
 
   return (
     <div
+      data-cursor="marquee"
       className={`section-padding-x overflow-hidden border-y-[3px] border-black bg-[var(--palette-lavender)] py-3 sm:py-2 ${className}`}
       aria-hidden
     >

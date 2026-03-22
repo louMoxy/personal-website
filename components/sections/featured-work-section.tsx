@@ -30,6 +30,7 @@ export function FeaturedWorkSection() {
   return (
     <section
       id="work"
+      data-cursor="work"
       className="border-b-[3px] border-black bg-[#fffef8]"
       aria-labelledby="work-heading"
     >

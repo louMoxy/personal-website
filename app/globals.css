@@ -41,6 +41,19 @@ body {
   overflow-x: hidden;
 }
 
+/* Custom cursor (see CustomCursor) — fine pointers only */
+@media (pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active * {
+    cursor: none !important;
+  }
+
+  html.custom-cursor-active *:focus-visible,
+  html.custom-cursor-active .skip-link:focus {
+    cursor: pointer !important;
+  }
+}
+
 /* Horizontal padding that respects notches / home indicators.
    Generous gutters on phones so content never feels edge-to-edge. */
 .section-padding-x {

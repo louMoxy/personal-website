@@ -5,6 +5,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
+      data-cursor="about"
       className="relative overflow-hidden border-b-[3px] border-black bg-[#fffef8]"
       aria-labelledby="about-heading"
     >

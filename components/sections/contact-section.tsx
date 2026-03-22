@@ -6,6 +6,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
+      data-cursor="contact"
       className="bg-[var(--palette-lavender)]"
       aria-labelledby="contact-heading"
     >

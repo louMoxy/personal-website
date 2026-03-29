@@ -172,13 +172,6 @@ export const portfolioItems: PortfolioItem[] = [
     size: "tall",
     imagePosition: "top",
   },
-  // {
-  //   id: "lil-byte",
-  //   title: "Lil Byte",
-  //   href: "https://lilbytegames.com",
-  //   image: "/portfolio/placeholder.svg",
-  //   size: "square",
-  // },
   {
     id: "pixie-booth",
     title: "Pixie Booth — Photography booth website",
@@ -193,6 +186,13 @@ export const portfolioItems: PortfolioItem[] = [
     href: "https://eyelashes-site.netlify.app",
     image: "/portfolio/Lash-website.jpg",
     size: "standard",
+  },
+  {
+    id: "lil-byte",
+    title: "Lil Byte",
+    href: "https://lilbytegames.com",
+    image: "/portfolio/lil-byte.jpg",
+    size: "tall",
   },
 ];
 
